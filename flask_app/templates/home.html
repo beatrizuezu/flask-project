@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}teste{% endblock %}
+
+{% block container %}
+    <div class="top-pad">
+        {% for id, product in product.items() %}
+        <div class="well">
+            <h2>
+                <a href='{{ url_for('products', key=id) }}'>
+                    {{ product['name'] }}
+                </a>
+                <smal>$ {{ product['price'] }}</smal>
+            </h2>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
